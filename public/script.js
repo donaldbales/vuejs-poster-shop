@@ -7,7 +7,8 @@ new Vue({
     items: [],
     cart: [],
     currentSearch: '',
-    lastSearch: ''
+    lastSearch: '',
+    loading: false
   },          // global data 
   methods: {
     addItem: function(index) {
@@ -47,9 +48,12 @@ new Vue({
       this.total += PRICE;
     },
     onSubmit: function() {
+      this.items = [];
+      this.loading = true;
       this.$http.get('/search/'.concat(this.currentSearch)).then(function(res) {
         this.lastSearch = this.currentSearch;
         this.items = res.data;
+        this.loading = false;
       });
     }
   },
