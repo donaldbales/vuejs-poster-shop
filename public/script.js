@@ -6,7 +6,7 @@ new Vue({
     total: 0,
     items: [],
     cart: [],
-    currentSearch: '',
+    currentSearch: 'trending',
     lastSearch: '',
     loading: false
   },          // global data 
@@ -61,5 +61,8 @@ new Vue({
     currency: function(value) {
       return '$'.concat(value.toFixed(2));
     }
+  },
+  mounted: function() {
+    this.onSubmit();
   }
 });
