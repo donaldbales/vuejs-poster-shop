@@ -50,7 +50,7 @@ new Vue({
       this.total += PRICE;
     },
     onSubmit: function() {
-      console.log(this.search);
+      console.log(this.$http);
     }
   },
   filters: {
