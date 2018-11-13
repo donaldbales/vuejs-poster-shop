@@ -8,7 +8,8 @@ new Vue({
     cart: [],
     currentSearch: 'trending',
     lastSearch: '',
-    loading: false
+    loading: false,
+    price: PRICE
   },          // global data 
   methods: {
     addItem: function(index) {
