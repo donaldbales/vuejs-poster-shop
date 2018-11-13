@@ -4,11 +4,7 @@ new Vue({
   el: '#app', // assign a css selector string for where Vue can access the DOM
   data: {
     total: 0,
-    items: [
-      { id: 1, title: 'Item 1' },
-      { id: 2, title: 'Item 2' },
-      { id: 3, title: 'Item 3' }
-    ],
+    items: [],
     cart: [],
     search: ''
   },          // global data 
@@ -51,7 +47,7 @@ new Vue({
     },
     onSubmit: function() {
       this.$http.get('/search/'.concat(this.search)).then(function(res) {
-        console.log(res);
+        this.items = res.data;
       });
     }
   },
