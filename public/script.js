@@ -47,6 +47,9 @@ new Vue({
     inc: function(item) {
       item.qty++;
       this.total += PRICE;
+    },
+    onSubmit: function() {
+      console.log("onSubmit");
     }
   },
   filters: {
