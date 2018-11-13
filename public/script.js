@@ -31,5 +31,10 @@ new Vue({
         });
       }
     }
+  },
+  filters: {
+    currency: function(value) {
+      return '$'.concat(value.toFixed(2));
+    }
   }
 });

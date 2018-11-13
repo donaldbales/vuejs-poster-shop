@@ -30,12 +30,12 @@
             <ul>
               <li class="cart-item" v-for="item in cart">
                 <div class="item-title">{{ item.title }}</div>
-                <span class="item-qty">${{ item.price }} x {{ item.qty }}</span>
+                <span class="item-qty">{{ item.price | currency }} x {{ item.qty }}</span>
               </li>
             </ul>
             <div>
               <div v-if="cart.length">
-                <div>Total: ${{ total }}</div>
+                <div>Total: {{ total | currency }}</div>
               </div>
               <div v-else class="empty-cart">
                 <div>No items in the cart.</div>
