@@ -33,8 +33,13 @@
               </li>
             </ul>
             <div>
-              <div>Total: ${{ total }}</div>
-            </div>
+              <div v-if="cart.length">
+                <div>Total: ${{ total }}</div>
+              </div>
+              <div v-else class="empty-cart">
+                <div>No items in the cart.</div>
+              </div>
+          </div>
         </div>
     </div>
 </div>
