@@ -50,7 +50,9 @@ new Vue({
       this.total += PRICE;
     },
     onSubmit: function() {
-      console.log(this.$http);
+      this.$http.get('/search/'.concat(this.search)).then(function(res) {
+        console.log(res);
+      });
     }
   },
   filters: {
