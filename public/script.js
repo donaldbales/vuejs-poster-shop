@@ -48,6 +48,7 @@ new Vue({
     onSubmit: function() {
       this.$http.get('/search/'.concat(this.search)).then(function(res) {
         this.items = res.data;
+        console.log(res.data);
       });
     }
   },
