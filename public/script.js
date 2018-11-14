@@ -1,6 +1,6 @@
 var PRICE = 9.99;
 
-new Vue({
+var vm = new Vue({
   el: '#app', // assign a css selector string for where Vue can access the DOM
   data: {
     total: 0,
@@ -9,7 +9,8 @@ new Vue({
     currentSearch: 'trending',
     lastSearch: '',
     loading: false,
-    price: PRICE
+    price: PRICE,
+    username: ''
   },          // global data 
   methods: {
     addItem: function(index) {
@@ -64,6 +65,10 @@ new Vue({
     }
   },
   mounted: function() {
+    this.$http.get('/username').then(function(res) {
+        this.username = res.body;
+        console.log('username: ' + this.username);
+    });
     this.onSubmit();
   }
 });
